@@ -1,10 +1,13 @@
 from django.shortcuts import redirect, render
 
 from cars.forms import CarsForm
+from cars.models import Cars
 
 
 def home(request):
-    return render(request, "index.html")
+    data = {}
+    data["cars"] = Cars.objects.all()
+    return render(request, "index.html", data)
 
 
 def form(request):
@@ -18,3 +21,9 @@ def create(request):
     if form.is_valid():
         form.save()
         return redirect("home")
+
+
+def view(request, pk):
+    data = {}
+    data["cars"] = Cars.objects.get(pk=pk)
+    return render(request, "view.html", data)
