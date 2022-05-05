@@ -43,3 +43,9 @@ def update(request, pk):
     if form.is_valid():
         form.save()
         return redirect("home")
+
+
+def delete(request, pk):
+    cars = Cars.objects.get(pk=pk)
+    cars.delete()
+    return redirect("home")
