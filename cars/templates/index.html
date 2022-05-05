@@ -34,8 +34,8 @@
                         <td>{{car.year}}</td>
                         <td style="width:280px">
                             <a href="/view/{{car.id}}/" class="btn btn-dark">Detalhes</a>
-                            <a href="" class="btn btn-primary">Editar</a>
-                            <a href="" class="btn btn-danger">Deletar</a>
+                            <a href="/edit/{{car.id}}/" class="btn btn-primary">Editar</a>
+                            <a href="/del/{{car.id}}/" class="btn btn-danger">Deletar</a>
                         </td>
                     </tr>
                     {% endfor %}
