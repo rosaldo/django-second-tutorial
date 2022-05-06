@@ -18,6 +18,7 @@ def form(request):
 
 def create(request):
     form = CarsForm(request.POST or None)
+    print(form.is_valid())
     if form.is_valid():
         form.save()
         return redirect("home")
